@@ -8,6 +8,7 @@ def validUTF8(data):
     '''func body'''
     byte_count = 0
     for elem in data:
+        elem = elem & 0xFF # Ensure elem is a single byte
         if byte_count == 0:
             if elem >> 7 == 0:
                 continue
